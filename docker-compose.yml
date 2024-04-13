@@ -1,0 +1,21 @@
+version: '3'
+services:
+  api:
+    build: ./api     
+    container_name: testapp-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./api:/api
+    command: bash -c "python manage.py runserver 0.0.0.0:8000"
+
+  web:
+    build: ./frontend
+    container_name: testapp-web
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/frontend
+    depends_on:
+      - api
+    command: bash -c "npm start"

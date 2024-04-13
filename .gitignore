@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*.py[co]
+*.pyc
+**/__pycache__/
+*/__pycache__/
+venv
+.idea
+db.sqlite
+
+node_modules
